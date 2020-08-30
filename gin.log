@@ -1,0 +1,8 @@
+[GIN-debug] GET    /user/:name               --> main.main.func2 (4 handlers)
+[GIN-debug] GET    /welcome                  --> main.main.func3 (4 handlers)
+[GIN-debug] POST   /form_post                --> main.main.func4 (4 handlers)
+[GIN-debug] GET    /v1/welcome               --> main.main.func5 (4 handlers)
+[GIN-debug] POST   /loginJson                --> main.main.func6 (4 handlers)
+[GIN-debug] POST   /loginForm                --> main.main.func7 (4 handlers)
+[GIN-debug] Environment variable PORT="3001"
+[GIN-debug] Listening and serving HTTP on :3001

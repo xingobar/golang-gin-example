@@ -61,7 +61,55 @@ func main() {
 	}
 
 	// 當發生 panic 的時候避免程式 crash
-	r.Use(gin.Recovery())
+	//r.Use(gin.Recovery())
+
+	// 設定 login struct
+	type Login struct {
+		User string `form:"user" json:"user" binding:"required"`
+		Password string `form:"password" json:"password" binding:"required"`
+	}
+
+	r.POST("/loginJson", func(context *gin.Context) {
+		var json Login
+		if err := context.ShouldBindJSON(&json); err != nil {
+			context.JSON(http.StatusBadRequest, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+
+		if json.User != "test" && json.Password !=" test" {
+			context.JSON(http.StatusUnauthorized, gin.H{
+				"status": "unauthorized",
+			})
+			return
+		}
+
+		context.JSON(http.StatusOK, gin.H{
+			"status": "you are logged in",
+		})
+	})
+
+	r.POST("/loginForm", func(context *gin.Context) {
+		var json Login
+		if err := context.ShouldBind(&json); err != nil {
+			context.JSON(http.StatusBadRequest, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+
+		if json.User != "test" && json.Password != "test" {
+			context.JSON(http.StatusUnauthorized, gin.H{
+				"status": "unauthorized",
+			})
+			return
+		}
+
+		context.JSON(http.StatusOK, gin.H{
+			"status": "you are logged in",
+		})
+	})
 
 	r.Run()
 }
