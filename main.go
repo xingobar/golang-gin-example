@@ -1,5 +1,8 @@
 package main
 
+/**
+ gin run main.go -> live reload
+ */
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -12,6 +15,9 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	// global use middleware
+	r.Use(DummaryMiddleware())
 
 	// get parameter
 	r.GET("/user/:name", func(context *gin.Context) {
@@ -37,6 +43,26 @@ func main() {
 			"nick": nick,
 		})
 	})
-	
+
+	// url: /v1/welcome
+	v1 := r.Group("/v1")
+	{
+		v1.GET("welcome", func(context *gin.Context) {
+			context.JSON(http.StatusOK, gin.H{
+				"message": "message",
+			})
+		})
+	}
+
+	// 當發生 panic 的時候避免程式 crash
+	r.Use(gin.Recovery())
+
 	r.Run()
+}
+
+// custom middleware
+func DummaryMiddleware() gin.HandlerFunc {
+	return func(context *gin.Context) {
+		context.Next()
+	}
 }
