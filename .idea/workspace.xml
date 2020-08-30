@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4be13d4a-c8be-4677-9ad8-188331ea6c03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/gin-bin" beforeDir="false" afterPath="$PROJECT_DIR$/gin-bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gin.log" beforeDir="false" afterPath="$PROJECT_DIR$/gin.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+            <state relative-caret-position="1348">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="e#23#73#0" expanded="true" />
               </folding>
@@ -145,8 +144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+        <state relative-caret-position="1348">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
           <folding>
             <element signature="e#23#73#0" expanded="true" />
           </folding>

@@ -69,6 +69,7 @@ func main() {
 		Password string `form:"password" json:"password" binding:"required"`
 	}
 
+	// model binding
 	r.POST("/loginJson", func(context *gin.Context) {
 		var json Login
 		if err := context.ShouldBindJSON(&json); err != nil {
@@ -90,6 +91,7 @@ func main() {
 		})
 	})
 
+	// model binding
 	r.POST("/loginForm", func(context *gin.Context) {
 		var json Login
 		if err := context.ShouldBind(&json); err != nil {
