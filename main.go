@@ -5,7 +5,9 @@ package main
  */
 import (
 	"github.com/gin-gonic/gin"
+	"io"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -15,6 +17,10 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	// 會寫 gin.log 也會輸出
+	f, _ := os.Create("gin.log")
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
 
 	// global use middleware
 	r.Use(DummaryMiddleware())
